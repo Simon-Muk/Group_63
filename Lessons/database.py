@@ -1,0 +1,18 @@
+import sqlite3
+
+def create_tables(conn):
+    conn.execute("""
+    CREATE TABLE students (
+    name TEXT,
+    age INTEGER,
+    city TEXT
+    )
+    """)
+
+
+if __name__ == '__main__':
+    connection = sqlite3.connect("database.db")
+    create_tables(connection)
+
+    connection.close()
+
